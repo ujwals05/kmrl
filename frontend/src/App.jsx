@@ -1,7 +1,11 @@
 function App() {
   return (
     <>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
+      <div className="h-screen flex items-center justify-center bg-blue-600">
+        <h1 className="text-4xl font-bold text-white">
+          Tailwind is working!
+        </h1>
+      </div>
     </>
   );
 }
