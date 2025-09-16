@@ -8,14 +8,7 @@ const API_BASE_URL = 5000;
 
 function App() {
   const [trainData, setTrainData] = useState([]);
-  const [systemStatus, setSystemStatus] = useState({
-    status: "running",
-    trains_count: 25,
-    ml_model_trained: true,
-    optimization_completed: true,
-    manual_overrides_count: 2,
-    last_update: "2025-09-15T18:45:00Z",
-  });
+  const [systemStatus, setSystemStatus] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [lastUpdate, setLastUpdate] = useState(null);
@@ -47,7 +40,7 @@ function App() {
   // Fetch system status
   const fetchSystemStatus = async () => {
     try {
-      const status = await axios.get("http://localhost:8000/status");
+      const status = await makeApiRequest("/status");
       setSystemStatus(status);
     } catch (error) {
       setError("Failed to fetch system status");
