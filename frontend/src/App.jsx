@@ -5,9 +5,48 @@ import { ExclamationCircleIcon } from "@heroicons/react/24/solid";
 import Header from "./components/Header";
 import SystemStatus from "./components/SystemStatus";
 import MetricsCards from "./components/MetricsCards";
+import ChartsSection from "./components/ChartsSection";
 
 function App() {
-  const [trainData, setTrainData] = useState([]);
+  // const [trainData, setTrainData] = useState([
+  //   {
+  //     train_id: "Train-101",
+  //     fitness_score: 95,
+  //     depot: "Depot A",
+  //     final_decision: "Induct",
+  //   },
+  //   {
+  //     train_id: "Train-102",
+  //     fitness_score: 88,
+  //     depot: "Depot B",
+  //     final_decision: "Induct",
+  //   },
+  //   {
+  //     train_id: "Train-103",
+  //     fitness_score: 76,
+  //     depot: "Depot A",
+  //     final_decision: "Reject",
+  //   },
+  //   {
+  //     train_id: "Train-104",
+  //     fitness_score: 65,
+  //     depot: "Depot C",
+  //     final_decision: "Reject",
+  //   },
+  //   {
+  //     train_id: "Train-105",
+  //     fitness_score: 82,
+  //     depot: "Depot B",
+  //     final_decision: "Induct",
+  //   },
+  //   {
+  //     train_id: "Train-106",
+  //     fitness_score: 70,
+  //     depot: "Depot C",
+  //     final_decision: "Pending",
+  //   },
+  // ]);
+  const [trainData, setTrainData] = useState([])
   const [systemStatus, setSystemStatus] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -193,6 +232,8 @@ function App() {
           )}
           {/* Metrics Cards */}
           <MetricsCards trainData={trainData} />
+          {/* Charts Section */}
+          <ChartsSection trainData={trainData} />
         </div>
       </div>
     </>
