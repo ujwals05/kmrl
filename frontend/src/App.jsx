@@ -47,14 +47,7 @@ function App() {
     },
   ]);
   // const [trainData, setTrainData] = useState([])
-  const [systemStatus, setSystemStatus] = useState({
-    status: "running", // "running" | "error" | "initializing"
-    trains_count: 25, // total number of trains
-    ml_model_trained: true, // boolean
-    optimization_completed: false, // boolean
-    manual_overrides_count: 3, // number of overrides
-    last_update: "2025-09-17T08:30:00Z", // ISO timestamp string
-  });
+  const [systemStatus, setSystemStatus] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [lastUpdate, setLastUpdate] = useState(null);
